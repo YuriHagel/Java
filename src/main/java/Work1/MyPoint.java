@@ -1,6 +1,5 @@
 package Work1;
 
-import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class MyPoint extends Point {
@@ -8,12 +7,15 @@ public class MyPoint extends Point {
     System.out.print("Введите координаты для точки X1: ");
     Scanner sс = new Scanner(System.in);
     double coordinateX1 = sс.nextDouble();
+
     System.out.print("Введите координаты для точки Y1: ");
     sс = new Scanner(System.in);
     double coordinateY1 = sс.nextDouble();
+
     System.out.print("Введите координаты для точки X2: ");
     sс = new Scanner(System.in);
     double coordinateX2 = sс.nextDouble();
+
     System.out.print("Введите координаты для точки Y2: ");
     sс = new Scanner(System.in);
     double coordinateY2 = sс.nextDouble();
