@@ -11,13 +11,15 @@ public class Sorts {
       Scanner in = new Scanner(System.in);
       //Select the sorting option that you want to use.
       System.out.println("HOMEWORK \n"
-              + "Enter number of task :\n"
-              + "SortShell\n"
-              + "   task1(SortShell) - 1\n");
+              + "Enter number of sort :\n"
+              + " sort1(SortShell) - 1\n"
+              + " sort2 (BucketSort) - 2\n");
 
       int task = in.nextInt();
       if (task == 1) {
         SortShell.sort();
+      } else if (task == 2) {
+        BucketSort.sort();
       } else {
         System.err.println("Enter valid");
         choseSort();

@@ -3,7 +3,7 @@ package algorithm;
 /**
  * Shell sort.
  */
-public class SortShell {
+class SortShell {
   static void sort() {
     int[] mas = new int[10];
     for (int i = 0; i < mas.length; i++) {
@@ -25,7 +25,7 @@ public class SortShell {
         }
       }
       System.out.println(" d = " + d);
-      d=d/2;
+      d = d / 2;
     }
     //outpute date
     System.out.println();
