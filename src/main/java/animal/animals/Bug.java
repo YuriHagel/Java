@@ -8,11 +8,11 @@ import animal.Insect;
 public class Bug extends Insect {
   private String food = "Human";
   private String breed = "klopp";
-  private String type = "bug";
 
   public Bug() {
     setBreed(breed);
     setFoodEaten(food);
+    String type = "bug";
     setAnimalType(type);
     setLocation("Home");
     setPower(1);
@@ -21,11 +21,11 @@ public class Bug extends Insect {
     setAnimalHeight(0.1);
   }
 
-  public String getBreed() {
+  private String getBreed() {
     return breed;
   }
 
-  public void setBreed(String breed) {
+  private void setBreed(String breed) {
     this.breed = breed;
   }
 

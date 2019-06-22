@@ -19,11 +19,11 @@ public  class Cat extends Feline {
     setAnimalHeight(20.2);
   }
 
-  public String getBreed() {
+  private String getBreed() {
     return breed;
   }
 
-  public void setBreed(String breed) {
+  private void setBreed(String breed) {
     this.breed = breed;
   }
 
