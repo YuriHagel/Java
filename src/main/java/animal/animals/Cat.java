@@ -31,6 +31,16 @@ public  class Cat extends Feline {
   public void eat() {
     System.out.println(getClass().getSimpleName() + " eats " + food + " Cats are obligate carnivores, in other words, meat eaters");
   }
+  public void eat(String meat) {
+    System.out.println(getClass().getSimpleName() + " eats " + meat);
+  }
+  public void eat(int meat, String food) {
+    System.out.println(getClass().getSimpleName() + " eats " + meat + " " + food);
+
+  }
+  public void eat(String meat,short cycle) {
+    System.out.println(getClass().getSimpleName() + " eats " + meat + "to " + cycle);
+  }
   @Override
   public void sleep() {
     System.out.println(this.type + " sleeps in a cloud");

@@ -2,12 +2,19 @@ group 'Tinkoff-Java'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
+apply plugin: 'application'
 
 sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
 }
+//ext {
+//    defaultEncoding = 'UTF-8'
+//    junitVersion = '5.4.0'
+//    allureVersion = '2.10.0'
+//    aspectjVersion = '1.9.2'
+//}
 
 dependencies {
     implementation 'org.seleniumhq.selenium:selenium-java:3.141.59'
@@ -20,8 +27,8 @@ dependencies {
     implementation 'org.junit.jupiter:junit-jupiter:5.4.2'
     testCompile 'org.junit.platform:junit-platform-runner:1.4.2'
     implementation 'org.junit.jupiter:junit-jupiter:5.4.2'
-    //Allure
-    implementation group: 'io.qameta.allure', name: 'allure-junit5', version: allureVersion
+    Allure
+//    implementation group: 'io.qameta.allure', name: 'allure-junit5', version: allureVersion
 }
 //allure {
 //    version = allureVersion
@@ -33,3 +40,6 @@ dependencies {
 //        version = allureVersion
 //    }
 //}
+test {
+    useJUnitPlatform()
+}

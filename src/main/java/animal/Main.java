@@ -4,18 +4,25 @@ import animal.animals.Bug;
 import animal.animals.Cat;
 import animal.animals.Dog;
 import animal.animals.Wolf;
+import org.apache.log4j.Logger;
 
 import java.util.Scanner;
 
 public class Main {
-  public static void main(String[] args) {
+  private static final Logger LOG = Logger.getLogger(Main.class);
 
+  public static void main(String[] args) {
+    overload();
+    System.out.println("...............");
+
+    //Polymorphism array
     Animal[] animals = new Animal[7];
     animals[0] = new Cat();
     animals[1] = new Wolf();
     animals[2] = new Dog();
     animals[3] = new Bug();
     feedAllAnimals(animals);
+
     try {
       Scanner in = new Scanner(System.in);
       System.out.println("If you want more information about animals, select the number.\n"
@@ -47,8 +54,7 @@ public class Main {
       }
       in.close();
     } catch (Exception e) {
-      System.out.println("Enter the number of animals to display.");
-      e.printStackTrace();
+      LOG.error("Enter the number of animals to display.", e);
     }
   }
 
@@ -61,5 +67,14 @@ public class Main {
         animal.roam();
       }
     }
+  }
+
+  private static void overload() {
+    //Перегрузка методов.
+    Cat exam = new Cat();
+    exam.eat();
+    exam.eat("fish");
+    exam.eat(6, "whiskas");
+    exam.eat("kitekat", (short) 3);
   }
 }
