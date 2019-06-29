@@ -1,8 +1,12 @@
 package animal.animals;
 
 import animal.Feline;
+import animal.Pet;
 
-public  class Cat extends Feline {
+import javax.naming.Name;
+
+public  class Cat extends Feline implements Pet {
+  private final static String NAME = "Markiz";
   private String food = "Meat";
   private String breed = "Siamse";
   private String type = "cat";
@@ -61,6 +65,16 @@ public  class Cat extends Feline {
             + "height \"" + getAnimalHeight() + "\"см\n"
             + "location \"" + getLocation() + "\"\n"
             + "power \"" + getPower() + "\"\n");
+  }
+
+  @Override
+  public void beFriendly() {
+    System.out.println(NAME
+            + ": I'm friendly!");
+  }
+  @Override
+  public String getName() {
+    return NAME;
   }
 
 }

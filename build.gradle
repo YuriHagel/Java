@@ -27,7 +27,7 @@ dependencies {
     implementation 'org.junit.jupiter:junit-jupiter:5.4.2'
     testCompile 'org.junit.platform:junit-platform-runner:1.4.2'
     implementation 'org.junit.jupiter:junit-jupiter:5.4.2'
-    Allure
+//    Allure
 //    implementation group: 'io.qameta.allure', name: 'allure-junit5', version: allureVersion
 }
 //allure {

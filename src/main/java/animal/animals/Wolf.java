@@ -33,9 +33,9 @@ public class Wolf extends Canine {
 
   @Override
   public void eat() {
-    System.out.println(getClass().getSimpleName() + " eats " + food + " Wolves are carnivores, and their"
-            + " diet consists primarily of ungulates (hoofed mammals) such as deer, moose and wild boar."
-            + " These large animals are supplemented with a number of small animals, such as beavers, rabbits,"
+    System.out.println(getClass().getSimpleName() + " eats " + food + " Wolves are carnivores, and their\n"
+            + " diet consists primarily of ungulates (hoofed mammals) such as deer, moose and wild boar.\n"
+            + " These large animals are supplemented with a number of small animals, such as beavers, rabbits,\n"
             + " rodents, birds, reptiles, and even insects.");
   }
 

@@ -3,48 +3,45 @@ package animal;
 /**
  * Abstract class animal.
  */
-public abstract class Animal {
-  double animalHeight;
-  double animalWeight;
-  String foodEaten;
-  String animalType;
-  int power;
-  String location;
-  double speed;
+public abstract class Animal implements Creator {
+  private double animalHeight;
+  private double animalWeight;
+  private String foodEaten;
+  private String animalType;
+  private int power;
+  private String location;
+  private double speed;
 
-  public Animal() {
-  }
-
-  public int getPower() {
+  protected int getPower() {
     return power;
   }
 
-  public void setPower(int power) {
+  protected void setPower(int power) {
     this.power = power;
   }
 
-  public double getAnimalHeight() {
+  protected  double getAnimalHeight() {
     return animalHeight;
   }
 
-  public void setAnimalHeight(double AnimalHeight) {
+  protected void setAnimalHeight(double AnimalHeight) {
     this.animalHeight = AnimalHeight;
   }
 
-  public double getSpeed() {
+  protected double getSpeed() {
     return speed;
   }
 
-  public void setSpeed(double speed) {
+  protected void setSpeed(double speed) {
     this.speed = speed;
   }
 
 
-  public double getAnimalWeight() {
+  protected double getAnimalWeight() {
     return animalWeight;
   }
 
-  public void setAnimalWeight(double newWeight) {
+  protected void setAnimalWeight(double newWeight) {
     if (newWeight > 0) {
       this.animalWeight = newWeight;
     } else {
@@ -53,27 +50,27 @@ public abstract class Animal {
     }
   }
 
-  public String getFoodEaten() {
+  protected String getFoodEaten() {
     return foodEaten;
   }
 
-  public void setFoodEaten(String foodEaten) {
+  protected void setFoodEaten(String foodEaten) {
     this.foodEaten = foodEaten;
   }
 
-  public String getAnimalType() {
+  protected String getAnimalType() {
     return animalType;
   }
 
-  public void setAnimalType(String animalType) {
+  protected void setAnimalType(String animalType) {
     this.animalType = animalType;
   }
 
-  public String getLocation() {
+  protected String getLocation() {
     return location;
   }
 
-  public void setLocation(String location) {
+  protected void setLocation(String location) {
     this.location = location;
   }
 
@@ -84,4 +81,9 @@ public abstract class Animal {
   protected abstract void makeNoise();
 
   protected abstract void roam();
+
+  @Override
+  public void live() {
+    System.out.println("I can live");
+  }
 }

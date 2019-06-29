@@ -65,6 +65,7 @@ public class Main {
         animal.makeNoise();
         animal.sleep();
         animal.roam();
+        animal.live();
       }
     }
   }
