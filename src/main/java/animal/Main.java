@@ -10,6 +10,7 @@ import java.util.Scanner;
 
 public class Main {
   private static final Logger LOG = Logger.getLogger(Main.class);
+  private static Cat exam = new Cat();
 
   public static void main(String[] args) {
     overload();
@@ -31,7 +32,8 @@ public class Main {
               + "                animal(Cat) - 1\n"
               + "                animal(Dog) - 2\n"
               + "                animal(Wolf) -3\n"
-              + "                animal(Bug) - 4\n");
+              + "                animal(Bug) - 4\n"
+              + "                petsAnimal  - 5\n");
       short animal = in.nextShort();
       if (animal == 1) {
         // Так как нестатичный,пришлось создать объект.
@@ -47,6 +49,8 @@ public class Main {
       } else if (animal == 4) {
         Bug bug = new Bug();
         bug.infoBug();
+      } else if (animal == 5) {
+        petsAnimal();
       } else if (animal == 0) {
         in.close();
       } else {
@@ -72,10 +76,15 @@ public class Main {
 
   private static void overload() {
     //Перегрузка методов.
-    Cat exam = new Cat();
     exam.eat();
     exam.eat("fish");
     exam.eat(6, "whiskas");
     exam.eat("kitekat", (short) 3);
+  }
+
+  private static void petsAnimal() {
+    exam.beFriendly();
+    Dog dog = new Dog();
+    dog.beFriendly();
   }
 }

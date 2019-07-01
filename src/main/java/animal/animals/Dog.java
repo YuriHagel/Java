@@ -1,11 +1,13 @@
 package animal.animals;
 
 import animal.Canine;
+import animal.Pet;
 
 /**
  * Class dog.
  */
-public class Dog extends Canine {
+public class Dog extends Canine implements Pet {
+  private final static String NAME = "Lucky";
   private String food = "Meat";
   private String breed = "poodle";
   private String type = "dog";
@@ -55,5 +57,16 @@ public class Dog extends Canine {
             + "height \"" + getAnimalHeight() + "\"см\n"
             + "location \"" + getLocation() + "\"\n"
             + "power \"" + getPower() + "\"\n");
+  }
+
+  @Override
+  public void beFriendly() {
+    System.out.println(getClass().getSimpleName() + NAME
+            + ": I'm friendly!");
+  }
+
+  @Override
+  public String getName() {
+    return NAME;
   }
 }

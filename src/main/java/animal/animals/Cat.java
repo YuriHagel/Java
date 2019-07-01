@@ -3,9 +3,7 @@ package animal.animals;
 import animal.Feline;
 import animal.Pet;
 
-import javax.naming.Name;
-
-public  class Cat extends Feline implements Pet {
+public class Cat extends Feline implements Pet {
   private final static String NAME = "Markiz";
   private String food = "Meat";
   private String breed = "Siamse";
@@ -35,20 +33,25 @@ public  class Cat extends Feline implements Pet {
   public void eat() {
     System.out.println(getClass().getSimpleName() + " eats " + food + " Cats are obligate carnivores, in other words, meat eaters");
   }
+
   public void eat(String meat) {
     System.out.println(getClass().getSimpleName() + " eats " + meat);
   }
+
   public void eat(int meat, String food) {
     System.out.println(getClass().getSimpleName() + " eats " + meat + " " + food);
 
   }
-  public void eat(String meat,short cycle) {
+
+  public void eat(String meat, short cycle) {
     System.out.println(getClass().getSimpleName() + " eats " + meat + "to " + cycle);
   }
+
   @Override
   public void sleep() {
     System.out.println(this.type + " sleeps in a cloud");
   }
+
   @Override
   public void makeNoise() {
     System.out.println(this.type + " say meow, may be hungry ");
@@ -64,7 +67,8 @@ public  class Cat extends Feline implements Pet {
             + "weight \"" + getAnimalWeight() + "\"kg\n"
             + "height \"" + getAnimalHeight() + "\"см\n"
             + "location \"" + getLocation() + "\"\n"
-            + "power \"" + getPower() + "\"\n");
+            + "power \"" + getPower() + "\"\n"
+            + "name \"" + getName() + "\n");
   }
 
   @Override
@@ -72,6 +76,7 @@ public  class Cat extends Feline implements Pet {
     System.out.println(NAME
             + ": I'm friendly!");
   }
+
   @Override
   public String getName() {
     return NAME;
