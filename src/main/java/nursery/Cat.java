@@ -1,8 +1,13 @@
 package nursery;
 
+
 import java.io.Serializable;
 import java.util.Objects;
 
+import lombok.Data;
+
+
+@Data
 public class Cat implements Serializable {
   private Long key;
   private Float height;
@@ -21,47 +26,6 @@ public class Cat implements Serializable {
     this.age = age;
     this.nickname = nickname;
   }
-
-  public Float getHeight() {
-    return height;
-  }
-
-  public void setHeight(Float height) {
-    this.height = height;
-  }
-
-  public Float getWeight() {
-    return weight;
-  }
-
-  public void setWeight(Float weight) {
-    this.weight = weight;
-  }
-
-  public Integer getAge() {
-    return age;
-  }
-
-  public void setAge(Integer age) {
-    this.age = age;
-  }
-
-  public String getNickname() {
-    return nickname;
-  }
-
-  public void setNickname(String nickname) {
-    this.nickname = nickname;
-  }
-
-  public Long getKey() {
-    return key;
-  }
-
-  public void setKey(Long key) {
-    this.key = key;
-  }
-
 
   @Override
   public int hashCode() {
@@ -87,10 +51,10 @@ public class Cat implements Serializable {
 
   @Override
   public String toString() {
-    return "Номер = " + key +
-            ", Кличка = " + nickname +
-            ", Рост = " + height +
-            ", Вес = " + weight +
-            ", Возраст = " + age;
+    return "Номер = " + key
+            + ", Кличка = " + nickname
+            + ", Рост = " + height
+            + ", Вес = " + weight
+            + ", Возраст = " + age;
   }
 }

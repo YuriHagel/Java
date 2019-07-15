@@ -6,6 +6,7 @@ import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -20,14 +21,20 @@ public class Main {
   private static java.lang.reflect.Type typeOfHashMap = new TypeToken<List<Cat>>() {
   }.getType();
 
-
   public static void main(String[] args) throws IOException {
 
-    String menu = "  _ __ ___   ___ _ __  _   _ \n" +
-            " | '_ ` _ \\ / _ \\ '_ \\| | | |\n" +
-            " | | | | | |  __/ | | | |_| |\n" +
-            " |_| |_| |_|\\___|_| |_|\\__,_|\n"
-            + "\n1. Все котята\n2. Котята выставленные на продажу\n---------------------------------\n3. Добавить\n4. Изменить\n5. Выставить на продажу\n6. Продать\n0. Выйти";
+    String menu = "  _ __ ___   ___ _ __  _   _ \n"
+            + " | '_ ` _ \\ / _ \\ '_ \\| | | |\n"
+            + " | | | | | |  __/ | | | |_| |\n"
+            + " |_| |_| |_|\\___|_| |_|\\__,_|\n"
+            + "\n1. Все котята\n"
+            + "2. Котята выставленные на продажу\n"
+            + "---------------------------------\n"
+            + "3. Добавить\n"
+            + "4. Изменить\n"
+            + "5. Выставить на продажу\n"
+            + "6. Продать\n"
+            + "0. Выйти";
     System.out.println(menu);
 
     //загрузим данные из файла
@@ -43,9 +50,9 @@ public class Main {
       System.out.println("Ошибка чтения файла.\n" + ex.getLocalizedMessage());
     }
 
-    Scanner sc = new Scanner(new InputStreamReader(System.in, "UTF-8"));
+    Scanner sc = new Scanner(new InputStreamReader(System.in, StandardCharsets.UTF_8));
 
-    while (sc.hasNext() == true) {
+    while (sc.hasNext()) {
       String s1 = sc.next();
 
       switch (s1) {
@@ -91,12 +98,12 @@ public class Main {
               c.setAge(Integer.parseInt(sc.next()));
             }
           }
-          if (found == false) {
+          if (!found) {
             System.out.println("Котенок с таким номером не найден");
             break;
           }
           for (Cat c : catsForSale) {
-            if (foundCat != null && c.getKey().equals(foundCat.getKey())) {
+            if (c.getKey().equals(foundCat.getKey())) {
               c.setNickname(foundCat.getNickname());
               c.setHeight(foundCat.getHeight());
               c.setWeight(foundCat.getWeight());
@@ -116,7 +123,10 @@ public class Main {
               isAdded = true;
             }
           }
-          if (isAdded) break; //если был добавлен выходим
+          //если был добавлен выходим.
+          if (isAdded) {
+            break;
+          }
           for (Cat c : catsAll) {
             if (c.getKey().equals(key1)) {
               if (c.getAge() >= 2) {
