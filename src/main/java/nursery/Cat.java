@@ -15,7 +15,7 @@ public class Cat implements Serializable {
   private Integer age;
   private String nickname;
 
-  public Cat() {
+  Cat() {
   }
 
   // CONSTRUCTOR
