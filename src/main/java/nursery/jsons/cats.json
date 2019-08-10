@@ -1,1 +1,23 @@
-[]
+[
+  {
+    "key": 2,
+    "height": 3.0,
+    "weight": 2.0,
+    "age": 1,
+    "nickname": "misky"
+  },
+  {
+    "key": 3,
+    "height": 5.0,
+    "weight": 3.0,
+    "age": 1,
+    "nickname": "joy"
+  },
+  {
+    "key": 4,
+    "height": 2.0,
+    "weight": 3.0,
+    "age": 4,
+    "nickname": "kukusik"
+  }
+]
