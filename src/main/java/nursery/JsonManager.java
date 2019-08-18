@@ -14,6 +14,7 @@ import static nursery.JsonPath.CAT;
 import static nursery.JsonPath.CATS;
 import static nursery.JsonPath.CATS_SALES;
 
+@SuppressWarnings("DM_DEFAULT_ENCODING")
 class JsonManager {
   static List<Cat> catsAll = new ArrayList<>();
   static List<Cat> catsForSale = new ArrayList<>();
@@ -54,6 +55,7 @@ class JsonManager {
     return catList;
   }
 
+  @SuppressWarnings("RV_RETURN_VALUE_IGNORED_BAD_PRACTICE")
   static void generateCatsJson() {
     try {
       File jsonFile = new File(CATS);

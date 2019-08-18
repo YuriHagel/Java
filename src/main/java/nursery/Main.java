@@ -1,6 +1,5 @@
 package nursery;
 
-import java.io.File;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
@@ -15,20 +14,7 @@ public class Main {
    */
   public static void main(String[] args) {
     try {
-      String menu = "  _ __ ___   ___ _ __  _   _ \n"
-              + " | '_ ` _ \\ / _ \\ '_ \\| | | |\n"
-              + " | | | | | |  __/ | | | |_| |\n"
-              + " |_| |_| |_|\\___|_| |_|\\__,_|\n"
-              + "\n1. Все котята\n"
-              + "2. Котята выставленные на продажу\n"
-              + "---------------------------------\n"
-              + "3. Добавить\n"
-              + "4. Изменить\n"
-              + "5. Выставить на продажу\n"
-              + "6. Продать\n"
-              + "0. Выйти";
-      System.out.println(menu);
-      System.out.println(new File(".").getAbsolutePath());
+      System.out.println(AppManager.MENU);
       getCatList();
       getCatListSales();
 
@@ -45,18 +31,7 @@ public class Main {
             catsForSale.forEach(cat -> System.out.println(cat.toString()));
             break;
           case "3":
-            Cat cat = new Cat();
-            cat.setKey((long) (catsAll.size() + 1));
-            System.out.println("Введите кличку:");
-            cat.setNickname(sc.next());
-            System.out.println("Введите рост:");
-            cat.setHeight(Float.parseFloat(sc.next()));
-            System.out.println("Введите вес:");
-            cat.setWeight(Float.parseFloat(sc.next()));
-            System.out.println("Введите возраст:");
-            cat.setAge(Integer.parseInt(sc.next()));
-            catsAll.add(cat);
-            System.out.println("Котенок успешно добавлен: " + cat.toString());
+            AppManager.choice3();
             break;
           case "4":
             System.out.println("Введите номер котенка:");
@@ -136,12 +111,12 @@ public class Main {
             System.out.println("Котенок " + delCat.toString() + " продан!");
             break;
           case "0":
-            System.out.println(menu);
+            System.out.println(AppManager.MENU);
             generateCatsJson();
             salesCats();
             break;
           default:
-            System.err.println("Enter valid");
+            System.err.println("You did not enter a valid option. Please enter a valid option");
         }
       }
     } catch (NullPointerException e) {
